@@ -1,0 +1,44 @@
+For detail information read published paper: 
+https://www.researchgate.net/publication/279449408_Spatial_Rules_for_Capturing_Qualitatively_Equivalent_Configurations_in_Sketch_maps
+
+
+Using the CLP(QS) framework, we define spatial rules to
+compute qualitative information between nearby objects. For
+the linear ordering and orientation information of adjacent
+landmarks, we use connected street segments as reference
+objects, while junctions are used as reference objects for cyclic
+ordering. The adjacency of landmarks is defined via relative
+metric distances.
+
+Preliminaries
+CLP(QS) includes a library of qualitative spatial relations
+encoded as polynomial constraints over a set of real variables
+X, which are solved via constraint logic programming [2].
+In this subsection we present the CLP(QS) library implementations
+of projection, distance, and orientation relations that
+we build on in subsequent sections. A set of spatial relations
+is consistent in CLP(QS) if there exists some assignment of
+reals to the variables X such that all of the corresponding
+polynomial constraints are satisfied. CLP(QS) uses a variety of
+polynomial solvers including CLP(R), SAT Modulo Theories,
+quantifier elimination by Cylindrical Algebraic Decomposition,
+and geometric constraint solvers.
+
+Projection. A point is projected onto a line using the dot
+product. This is extended to segment-line projection by projecting
+both end points. Polygons are projected onto lines by
+projecting all vertices and taking the maximum and minimum
+projected values as the projected interval. Points are projected
+onto segments by clamping the projected value to lie within
+the projection of the segment and the line collinear with the
+segment, i.e. let v; a; b be reals such that a  b then
+
+Euclidean distance. We employ CLP(QS) Euclidean distances
+between points, and between points and segments
+
+Relative Orientation. We employ CLP(QS) relative orientation
+predicates between points and lines.
+
+A- Rules for Linear Ordering as Constraints
+B- Qualitative Cyclic Ordering
+C- Orientation Relations.
